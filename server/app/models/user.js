@@ -96,3 +96,12 @@ userSchema
 	.get(function () {
 		return this._password
 	})
+
+/** Create virtual property that gets the user's full name */
+userSchema
+	.virtual('full_name')
+	.get(function () {
+		// get user's full name as a combination of both
+		// first and last names
+		return this.first_name + ' ' + this.last_name
+	})
