@@ -81,3 +81,18 @@ const userSchema = new mongoose.Schema(
 	},
 	{ timestamp: true },
 )
+
+/** Create virtual property that processes user password  */
+userSchema
+	.virtual('password')
+	.set(function (password) {
+		// create a temporarity variable called _password
+		this._password = password
+		// generate salt
+		this.salt = this.makeSalt()
+		// encrypt user password
+		this.hashed_password = this.encryptPassword(password)
+	})
+	.get(function () {
+		return this._password
+	})
