@@ -27,7 +27,7 @@ module.exports = {
 
         // IF user does not possess the required role
         // THEN return forbidden error
-        userRoles.forEach(userRole => {
+        userRoles.forEach(function (userRole) {
           if (userRole !== role) {
             return res.status(403).json({
               status: false,
