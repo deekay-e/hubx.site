@@ -1,0 +1,32 @@
+{
+  "name": "hubx_back",
+  "version": "0.0.1",
+  "description": "API server for the hubx backend built with node.js",
+  "main": "root.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "nodemon root.js",
+    "test": "mocha index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deekay-e/hub.x.git"
+  },
+  "keywords": [
+    "hubx",
+    "web",
+    "api",
+    "server",
+    "backend",
+    "node",
+    "express"
+  ],
+  "author": "Kelechi Egbuta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deekay-e/hub.x/issues"
+  },
+  "homepage": "https://github.com/deekay-e/hub.x#readme"
+}
