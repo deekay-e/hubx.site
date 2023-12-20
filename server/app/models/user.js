@@ -105,3 +105,28 @@ userSchema
 		// first and last names
 		return this.first_name + ' ' + this.last_name
 	})
+
+/** Add authentication methods to the userSchema */
+userSchema.methods = {
+	authenticate: function (password) {
+		return this.encryptPassword(password) === this.hashed_password
+	},
+
+	encryptPassword: function (password) {
+		if (!password) return ''
+		try {
+			return crypto
+				.createHmac('sha1', this.salt)
+				.update(password)
+				.digest('hex')
+		} catch (err) {
+			return ''
+		}
+	},
+
+	makeSalt: function () {
+		return Math.round(new Date().valueOf() * Math.random()) + ''
+	},
+}
+
+module.exports = mongoose.model('User', userSchema)
