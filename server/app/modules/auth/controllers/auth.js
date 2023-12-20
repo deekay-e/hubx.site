@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-const role = require('../../../constants/role')
+//const role = require('../../../constants/role')
 const settings = require('../../../core/config')
 const UserModel = require('../../../common/models/user')
 const { createAccessToken } = require('../../../core/security')
