@@ -2,20 +2,16 @@ const mongoose = require('mongoose')
 const role = require('../../constants/role')
 
 const roleSchema = new mongoose.Schema({
-  name: {
-    type: String,
-  },
-  description: {
-    type: String,
-  }
+  name: String,
+  description: String
 })
 
 const socialSchema = new mongoose.Schema({
   name: {
-    type: String,
+    type: String
   },
   link: {
-    type: String,
+    type: String
   }
 })
 
@@ -28,50 +24,50 @@ const userSchema = new mongoose.Schema(
       max: 32,
       unique: true,
       index: true,
-      lowercase: true,
+      lowercase: true
     },
     first_name: {
       type: String,
       trim: true,
       required: true,
-      max: 32,
+      max: 32
     },
     last_name: {
       type: String,
       trim: true,
       required: true,
-      max: 32,
+      max: 32
     },
     email: {
       type: String,
       trim: true,
       required: true,
       unique: true,
-      lowercase: true,
+      lowercase: true
     },
     profile: {
       type: String,
-      required: true,
+      required: true
     },
     hashed_password: {
       type: String,
-      required: true,
+      required: true
     },
     salt: String,
     bio: {
       type: String,
       max: 300,
-      trim: true,
+      trim: true
     },
     dob: Date,
     roles: [{type: roleSchema, default: role.USER}],
     socials: [socialSchema],
     photo: {
       data: Buffer,
-      contentType: String,
-    },
+      contentType: String
+    }
   },
-  { timestamp: true },
+  { timestamp: true }
 )
 
 /** Create virtual property that processes user password  */

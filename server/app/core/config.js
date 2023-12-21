@@ -21,6 +21,10 @@ class Settings {
   DB_PORT = process.env.DB_PORT || ''
 
   constructor () {
+    // Set database name based on the node environment type
+    if (this.ENVIRONMENT == 'development') this.DB_NAME += '_dev'
+    if (this.ENVIRONMENT == 'test') this.DB_NAME += '_test'
+  
     this.DB_URI = `mongodb://${this.DB_HOST}:${this.DB_PORT}/${this.DB_NAME}`
   }
 }
