@@ -1,9 +1,14 @@
 const jwt = require('jsonwebtoken')
+const sgm = require('@sendgrid/mail')
 
-//const role = require('../../../constants/role')
+const role = require('../../../constants/role')
 const settings = require('../../../core/config')
+const { errorHandler } = require('../../../core/utils')
 const UserModel = require('../../../common/models/user')
 const { createAccessToken } = require('../../../core/security')
+
+sgm.setApiKey(settings.SENDGRID_API_KEY)
+
 module.exports = {
   preSignup: function (req, res) {
     const { email } = req.body
@@ -19,7 +24,7 @@ module.exports = {
       const accessToken = createAccessToken(req.body)
 
       // Compose activation email template
-      /* const emailData = {
+      const emailData = {
         from: 'signup@hubx.consulting',
         to: email,
         subject: `Account activation link`,
@@ -28,25 +33,25 @@ module.exports = {
         <p>${settings.CLIENT_URL}/auth/account/activate/${accessToken}</p>
         <hr />
         <p>This email may contain sensitive information</p>
-        <p>https://hubx.consulting</p>
-    `,
+        <p>https://hubx.consulting</p>`,
       }
 
       sgMail.send(emailData).then((sent) => {
+        console.log(sent)
         return res.json({
           message: `Email has been sent to ${email}.${' '}
           Follow the instructions to activate your account.${' '}
           Link expires in 10min.`,
         })
-      }) */
+      })
 
-      return res.status(200).json({
+      /* return res.status(200).json({
         status: true,
         data: {
           //user: JSON.stringify(user), //user.toJSON(),
           token: accessToken
         }
-      })
+      }) */
     })
     .catch(err => console.log(err))
   },
@@ -61,6 +66,7 @@ module.exports = {
           })
         }
 
+        // Decode the user data from the token in the request body
         const {
           first_name,
           last_name,
@@ -74,6 +80,11 @@ module.exports = {
         const user = new UserModel(
           { first_name, last_name, email, password, profile, username }
         )
+
+        // Add a default USER role to the user to be created
+        user.roles.push(role.USER)
+
+        // Save the user to the database and indicate the status
         user.save(function (err, user) {
           if (err) {
             return res.status(401).json({
@@ -85,6 +96,8 @@ module.exports = {
             data: JSON.stringify(user)
           })
         })
+
+        console.log(decoded)
       })
     } else {
       return res.status(422).json({

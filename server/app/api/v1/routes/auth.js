@@ -3,7 +3,7 @@ const express = require('express')
 /** Import route handlers from the auth controller */
 const {
   preSignup,
-  signup 
+  signup
 } = require('../../../modules/auth/controllers/auth')
 
 /** Create router for the auth module */

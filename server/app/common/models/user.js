@@ -105,14 +105,19 @@ userSchema.methods = {
   },
 
   encryptPassword: function (password) {
+    /** 
+     * @description Encrypt the password using SHA256 Algorithm,
+     * for enhanced security of the password
+     */
     if (!password) return ''
     try {
+      // Hash the password using SHA256 Algorithm then store in the DB
       return crypto
-        .createHmac('sha1', this.salt)
+        .createHash('sha256', this.salt)
         .update(password)
         .digest('hex')
     } catch (err) {
-      return ''
+      return err
     }
   },
 
