@@ -32,11 +32,11 @@ app.use('/api', authRoutes)
 main().catch(err => console.log(err))
 
 async function main() {
-	/** Connect to database and server */
-	await mongoose.connect(settings.DB_URI)
-		.then(function () {
-			console.log('Successfully connected to mongodb')
-			app.listen(port, () => console.log(`Server is running at: ${port}`))
-		})
-		.catch((error) => console.log(`${error} did not connect`))
+  /** Connect to database and server */
+  await mongoose.connect(settings.DB_URI)
+    .then(function () {
+      console.log('Successfully connected to mongodb')
+      app.listen(port, () => console.log(`Server is running at: ${port}`))
+    })
+    .catch((error) => console.log(`${error} did not connect`))
 }
