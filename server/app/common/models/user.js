@@ -2,18 +2,20 @@ const mongoose = require('mongoose')
 const role = require('../../constants/role')
 
 const roleSchema = new mongoose.Schema({
-	name: String,
-	description: String
+	name: {
+		type: String,
+	},
+	description: {
+		type: String,
+	}
 })
 
 const socialSchema = new mongoose.Schema({
-	name: { 
+	name: {
 		type: String,
-		unique: true
 	},
-	link: { 
+	link: {
 		type: String,
-		unique: true
 	}
 })
 
@@ -61,22 +63,12 @@ const userSchema = new mongoose.Schema(
 			max: 300,
 			trim: true,
 		},
-		birthday: {
-			type: Date,
-		},
-		roles: {
-			type: [roleSchema],
-			required: true,
-			default: [role.USER],
-		},
+		dob: Date,
+		roles: [{type: roleSchema, default: role.USER}],
 		socials: [socialSchema],
 		photo: {
 			data: Buffer,
 			contentType: String,
-		},
-		resetPasswordLink: {
-			data: String,
-			default: '',
 		},
 	},
 	{ timestamp: true },
@@ -126,7 +118,7 @@ userSchema.methods = {
 
 	makeSalt: function () {
 		return Math.round(new Date().valueOf() * Math.random()) + ''
-	},
+	}
 }
 
 module.exports = mongoose.model('User', userSchema)

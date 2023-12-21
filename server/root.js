@@ -11,7 +11,6 @@ const authRoutes = require('./app/api/v1/routes/auth')
 /** Create express app */
 const app = express()
 const port = settings.API_PORT
-const host = settings.API_HOST
 
 /** Handle server logs with morgan */
 app.use(morgan('dev'))
@@ -25,22 +24,19 @@ app.use(cors())
 /** Use imported routes */
 // test index route
 app.get('/', function (req, res) {
-  res.send('Welcome to HUBX Consulting Web API')
+  res.send('Welcome to HUBX Consulting Web API\n')
 })
 
 app.use('/api', authRoutes)
 
-/** Connect to database and server */
-mongoose
-	.connect(settings.DB_URI, {
-		useUnifiedTopology: true,
-		useNewUrlParser: true,
-		useCreateIndex: true,
-		useFindAndModify: false,
-	})
-	.then(function () {
-		app.listen(port, host, () => console.log(`Server is running at: ${port}`))
-  })
-	.catch((error) => console.log(`${error} did not connect`))
+main().catch(err => console.log(err))
 
-mongoose.set('useFindAndModify', false)
+async function main() {
+	/** Connect to database and server */
+	await mongoose.connect(settings.DB_URI)
+		.then(function () {
+			console.log('Successfully connected to mongodb')
+			app.listen(port, () => console.log(`Server is running at: ${port}`))
+		})
+		.catch((error) => console.log(`${error} did not connect`))
+}

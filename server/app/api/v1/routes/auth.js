@@ -8,6 +8,6 @@ const {
 const router = express.Router()
 
 router.post('/auth/pre-signup', preSignup)
-router.post('/auth/signup', runValidation, signup)
+router.post('/auth/signup', signup)
 
 module.exports = router

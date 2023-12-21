@@ -8,12 +8,7 @@ module.exports = {
   preSignup: function (req, res) {
     const { email } = req.body
 
-    UserModel.findOne({ email }).exec(function (err, user) {
-      if (err) {
-        return res.status(401).json({
-          error: errorHandler(err),
-        })
-      }
+    UserModel.findOne({ email }).then(function (user) {
       if (user) {
         return res.status(400).json({
           error: 'Email is taken'
@@ -53,10 +48,11 @@ module.exports = {
         }
       })
     })
+    .catch(err => console.log(err))
   },
 
   signup: function (req, res) {
-    const { token } = req.body
+    const token = req.body.token
     if (token) {
       jwt.verify(token, settings.JWT_ACTIVATION, function (err, decoded) {
         if (err) {
@@ -85,7 +81,8 @@ module.exports = {
             })
           }
           return res.status(200).json({
-            message: 'Signup success! Please signin'
+            message: 'Signup success! Please signin',
+            data: JSON.stringify(user)
           })
         })
       })

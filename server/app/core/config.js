@@ -13,7 +13,7 @@ class Settings {
   SENDGRID_API_KEY = process.env.SENDGRID_API_KEY || ''
 
   JWT_SECRET = process.env.JWT_SECRET || ''
-  JWT_EXPIRATION = process.env.JWT_EXPIRATION || ''
+  JWT_EXPIRATION = process.env.JWT_ACTIVATION || ''
 
   DB_NAME = process.env.DB_NAME || ''
   DB_HOST = process.env.DB_HOST || ''
