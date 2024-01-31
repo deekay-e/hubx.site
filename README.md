@@ -1,3 +1,3 @@
-# HUBX.SITE
+# HUBX - Front
 
-Welcome to the codebase of the public facing site of HubX Consulting.
+Frontend bastion of HubX Consulting
