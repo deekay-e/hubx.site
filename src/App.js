@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 
 import Layout from './components/Layout'
-import DashLayout from './components/dash/Layout'
 
 import Home from './pages/home'
 import Contact from './pages/contact'
@@ -13,17 +12,8 @@ import * as lg from './pages/legal/index'
 import * as sv from './pages/services/index'
 import * as sp from './pages/support/index'
 
-import Welcome from './components/dash/Welcome'
-
 import Login from './features/auth/Login'
-import Prefetch from './features/auth/Prefetch'
 import Register from './features/auth/Register'
-import EditUser from './features/users/EditUser'
-import UsersList from './features/users/UsersList'
-import NewUserForm from './features/users/NewUserForm'
-import NewProject from './features/projects/NewProject'
-import EditProject from './features/projects/EditProject'
-import ProjectsList from './features/projects/ProjectsList'
 
 function App() {
   const location = useLocation();
@@ -103,24 +93,6 @@ function App() {
           <Route path='faqs' element={<sp.FAQs />} />
           <Route path='trust' element={<sp.Trust />} />
           <Route path='inquiries' element={<sp.Inquiries />} />
-        </Route>
-      </Route>
-
-      {/* Dash routes */}
-      <Route element={<Prefetch />}>
-        <Route path='/dash' element={<DashLayout />}>
-          <Route index element={<Welcome />} />
-          <Route path='users'>
-            <Route index element={<UsersList />} />
-            <Route path=':id' element={<EditUser />} />
-            <Route path='new' element={<NewUserForm />} />
-          </Route>
-
-          <Route path='projects'>
-            <Route index element={<ProjectsList />} />
-            <Route path=':id' element={<EditProject />} />
-            <Route path='new' element={<NewProject />} />
-          </Route>
         </Route>
       </Route>
     </Routes>

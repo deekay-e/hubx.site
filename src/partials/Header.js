@@ -8,8 +8,7 @@ import {
   IdentificationIcon,
   LifebuoyIcon,
   ArrowLeftOnRectangleIcon,
-  RectangleStackIcon,
-  ArrowRightIcon
+  RectangleStackIcon
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import MegaMenuLinks from './header/MegaMenuLinks'
