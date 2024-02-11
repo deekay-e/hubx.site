@@ -1,3 +1,3 @@
-# HUBX - Front
+# HUBX - Site
 
-Frontend bastion of HubX Consulting
+Welcome to the public-facing website of HubX Consulting
