@@ -6,9 +6,33 @@ const Lifestyle = () => {
     title: 'Lifestyle',
     desc: 'Your life. Your style. Find your balance.',
     popular: [
+      { thumb: '', title: '', link: '' },
+      { thumb: '', title: '', link: '' },
+      { thumb: '', title: '', link: '' },
+      { thumb: '', title: '', link: '' },
       { thumb: '', title: '', link: '' }
     ],
     cats: [
+      { image: '', title: '', subs: [
+        { title: '', link: '' },
+        { title: '', link: '' }
+      ]},
+      { image: '', title: '', subs: [
+        { title: '', link: '' },
+        { title: '', link: '' }
+      ]},
+      { image: '', title: '', subs: [
+        { title: '', link: '' },
+        { title: '', link: '' }
+      ]},
+      { image: '', title: '', subs: [
+        { title: '', link: '' },
+        { title: '', link: '' }
+      ]},
+      { image: '', title: '', subs: [
+        { title: '', link: '' },
+        { title: '', link: '' }
+      ]},
       { image: '', title: '', subs: [
         { title: '', link: '' },
         { title: '', link: '' }
@@ -24,6 +48,25 @@ const Lifestyle = () => {
     ],
     related: [
       { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' },
+      { title: '', link: '' }
     ]
   }
 
