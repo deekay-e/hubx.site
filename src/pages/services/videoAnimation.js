@@ -13,6 +13,9 @@ const VideoAnimation = () => {
       { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670382/Character%20Animation.png', title: 'Character Animator', link: '' },
       { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/9d0390ca87e4f946f4b4126d5cd15332-1653292063612/Social%20Media%20Videos%20icon%29.png', title: 'Social Media Videos', link: '' },
       { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/fa31de2cd7a541ba5fd2020e391b844f-1682323856747/ai%20atrists.png', title: 'Ai Music Videos', link: '' },
+      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670372/Logo%20Animation.png', title: 'Logo Animation', link: '' },
+      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670391/Visual%20Effects.png', title: 'Visual Effects', link: '' },
+      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/89ab9ac515a075a49a33b72518218e69-1630332670388/3D%20Product%20Animation.png', title: '3D Product Animation', link: '' },
     ],
     cats: [
       { image: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments-dev/generic_asset/asset/853522bd8185d62d95c1ba1b858f0b5e-1677664907733/Video%20Editing%20_%20Post-Production.jpg', title: 'Editing & Post-Production', subs: [

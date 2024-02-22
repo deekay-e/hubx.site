@@ -80,13 +80,13 @@ const ServicePage = ({ page }) => {
             <div className='mb-4'>
               <h2 className='font-semibold text-2xl'>Most Popular in {page.title}</h2>
             </div>
-            <div className='flex gap-x-4 overflow-x-scroll hide-scroll-bar py-6 '>
+            <div className='flex gap-x-4 overflow-x-scroll w-full hide-scroll-bar  py-6 px-6 '>
               {page.popular.map((pop, idx) => (
-                <div key={idx} className=' inline-block rounded-md px-2 py-4 shadow-lg hover:text-blue-500 shadow-gray-400 mt-4'>
-                  <a href={pop.link} className='flex gap-3 overflow-hidden'>
+                <div key={idx} className=' rounded-md px-2 py-4 shadow-lg hover:text-blue-500 shadow-gray-400 mt-4 w-full'>
+                  <a href={pop.link} className='flex flex-nowrap shrink overflow-visible gap-4 '>
                     <img className='w-8 h-8 rounded' src={pop.thumb} alt='' />
-                    <span className='text-center mt-1'>{pop.title}</span>
-                    <ArrowRight className='mt-2' />
+                    <span className='whitespace-nowrap mt-1'>{pop.title}</span>
+                    <ArrowRight className='mt-2 w-32 -ml-10 -mr-10' />
                   </a>
                 </div>
               ))}
