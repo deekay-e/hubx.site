@@ -10,7 +10,13 @@ const Business = () => {
       { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/70958cf8c8b29ab96cabd1b1bc065490-1630317720709/Frame%20691311670.png', title: 'E-Commerce Store Manager', link: '' },
       { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/01450128a7a217803cc1883e43cf26ec-1631621994546/sales.png', title: 'Lead Generation', link: '' },
       { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/70958cf8c8b29ab96cabd1b1bc065490-1630317720691/Frame%20691311671.png', title: 'Patent Application', link: '' },
-      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/70958cf8c8b29ab96cabd1b1bc065490-1630317720693/Frame%20691311667.png', title: 'CRM Management', link: '' }
+      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/70958cf8c8b29ab96cabd1b1bc065490-1630317720693/Frame%20691311667.png', title: 'CRM Management', link: '' },
+      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/70958cf8c8b29ab96cabd1b1bc065490-1630317720698/Frame%20691311672.png', title: 'Business Plans', link: '' },
+      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/70958cf8c8b29ab96cabd1b1bc065490-1630317720713/Frame%20691311668.png', title: 'Business Consulting', link: '' },
+      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/70958cf8c8b29ab96cabd1b1bc065490-1630317720693/Frame%20691311667.png', title: 'Customer Care', link: '' },
+      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/70958cf8c8b29ab96cabd1b1bc065490-1630317720691/Frame%20691311671.png', title: 'Legal Consulting', link: '' },
+      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/70958cf8c8b29ab96cabd1b1bc065490-1630317720697/Frame%20691311666.png', title: 'Market Research', link: '' },
+      { thumb: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/70958cf8c8b29ab96cabd1b1bc065490-1630317720690/Frame%20691311673.png', title: 'Virtual Assistant', link: '' },
     ],
     cats: [
       { image: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/2bca751b781125eb555ee167eff88342-1681975965018/Business%20Formation.jpg', title: 'Business Formation & Growth', subs: [
