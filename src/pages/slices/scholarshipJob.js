@@ -44,7 +44,7 @@ const ScholarshipJob = ({title, head, desc, items}) => {
         >
           View all {title}
         </a> */}
-        <Button linkinfo={{name:'View all'+" " + title, href:'/services/' + title}} />
+        <Button linkinfo={{name:'View all ' + title, href:'/services/' + title}} />
       </div>
     </div>
   )
